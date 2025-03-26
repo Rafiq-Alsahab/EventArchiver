@@ -1,6 +1,6 @@
 {
     "create_gallery": "Create Gallery",
     "templates": "Templates",
-      "login" : ":Login", 
+    "login" : ":Login", 
     "sign_in":"Sign in"
   }

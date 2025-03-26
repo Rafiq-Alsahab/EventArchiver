@@ -1,4 +1,23 @@
 import Link from "next/link";
+import i18n from "@/i18n";
+
+import '../i18n'; 
+import { dir } from 'i18next';
+import { languages } from '../i18nConfig';
+
+export const metadata = {
+  title: 'My App',
+};
+
+export async function generateStaticParams() {
+  return languages.map((lng) => ({ locale: lng }));
+}
+
+
+
+
+
+
 
 export default function RootLayout({ children }) {
   return (

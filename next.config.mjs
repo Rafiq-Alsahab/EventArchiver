@@ -2,11 +2,12 @@
 
 
 
-import nextI18nextConfig from './next-i18next.config.js';
 
 const nextConfig = {
-  ...nextI18nextConfig,
-
+  
+  experimental: {
+    serverActions: true,
+  },
 }
 
 export default nextConfig;
