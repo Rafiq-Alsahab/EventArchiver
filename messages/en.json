@@ -1,0 +1,10 @@
+{
+    "HomePage": {
+      "title": "Welcome to Event Archiver!",
+      "about": "This is the landing page. Please use the navigation menu above."
+    }, 
+    "admin":{
+      "Admin Dashboard": "Admin Dashboard",
+      "User Management": "User Management"
+    }
+}
