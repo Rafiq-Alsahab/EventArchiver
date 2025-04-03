@@ -1,6 +1,7 @@
 import {NextIntlClientProvider, hasLocale} from 'next-intl';
 import Link from "next/link";
- 
+import './globals.css';
+
 export default async function LocaleLayout({
   children,
   params

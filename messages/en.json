@@ -6,5 +6,9 @@
     "admin":{
       "Admin Dashboard": "Admin Dashboard",
       "User Management": "User Management"
+    },
+    "login":{
+      "sign_in":"Sign in", 
+      "login":"Login"
     }
 }

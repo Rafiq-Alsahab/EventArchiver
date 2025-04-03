@@ -6,5 +6,9 @@
     "admin":{
       "Admin Dashboard": "لوحة التحكم",
       "User Management": "اعدادات المستخدم"
+    },
+    "login":{
+      "sign_in":"تسجيل الدخول", 
+      "login":"تسجيل الدخول"
     }
   }
