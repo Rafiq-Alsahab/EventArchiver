@@ -7,7 +7,7 @@
       "Admin Dashboard": "Admin Dashboard",
       "User Management": "User Management"
     },
-    "login":{
+    "auth":{
       "sign_in":"Sign in", 
       "login":"Login"
     }

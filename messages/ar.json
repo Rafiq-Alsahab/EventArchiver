@@ -7,7 +7,7 @@
       "Admin Dashboard": "لوحة التحكم",
       "User Management": "اعدادات المستخدم"
     },
-    "login":{
+    "auth":{
       "sign_in":"تسجيل الدخول", 
       "login":"تسجيل الدخول"
     }

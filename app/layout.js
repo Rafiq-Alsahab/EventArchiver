@@ -1,33 +1,31 @@
-import {NextIntlClientProvider, hasLocale} from 'next-intl';
-import Link from "next/link";
-import './globals.css';
+import "./globals.css"
+import { Inter, Playfair_Display } from "next/font/google"
+// import { ThemeProvider } from "@/components/theme-provider"
 
-export default async function LocaleLayout({
-  children,
-  params
-}) {
-  // Ensure that the incoming `locale` is valid
-  const {locale} = await params;
- 
-  return (
-    <html lang={locale}>
-      <body>
-        <NextIntlClientProvider>
-          <header className="bg-white shadow">
-            <div className="container mx-auto px-4 py-4 flex space-x-4">
-              <Link href="/" className="text-blue-500 hover:underline">Home</Link>
-              <Link href="/dashboard" className="text-blue-500 hover:underline">Dashboard</Link>
-              <Link href="/admin" className="text-blue-500 hover:underline">Admin</Link>
-              <Link href="/upload/1" className="text-blue-500 hover:underline">Upload</Link>
-              <Link href="/event/sample-subdomain" className="text-blue-500 hover:underline">Event</Link>
-            </div>
-          </header> 
-          <main className="container mx-auto px-4 py-8 ">
-            {children}
-          </main>
-        </NextIntlClientProvider>
-      </body>
-    </html>
-  );
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
+
+const playfair = Playfair_Display({
+  subsets: ["latin"],
+  variable: "--font-serif",
+})
+
+export const metadata = {
+  title: "Mashriq - Modern Photo Gallery with Arabian Aesthetics",
+  description: "Create stunning photo galleries with rich Arabian textures and immersive scroll animations",
 }
 
+export default function RootLayout({
+  children,
+}) {
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${inter.variable} ${playfair.variable} font-sans`}>
+          {children}
+        
+      </body>
+    </html>
+  )
+}
