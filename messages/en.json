@@ -1,14 +1,49 @@
 {
-    "HomePage": {
-      "title": "Welcome to Event Archiver!",
-      "about": "This is the landing page. Please use the navigation menu above."
-    }, 
-    "admin":{
-      "Admin Dashboard": "Admin Dashboard",
-      "User Management": "User Management"
+  "Home":{
+    "header": {
+      "home": "Home",
+      "galleries": "Galleries",
+      "features": "Features",
+      "pricing": "Pricing",
+      "signIn": "Sign In",
+      "tryFree": "Try Free"
     },
-    "auth":{
-      "sign_in":"Sign in", 
-      "login":"Login"
+    "hero": {
+      "titleLine1": "Showcase your vision",
+      "titleLine2": "with elegance",
+      "description": "Mashriq offers a sophisticated platform for photographers to create stunning galleries with rich Arabian aesthetics and immersive visual experiences.",
+      "cta": "Create your gallery today"
+    },
+    "showcase": {
+      "title": "Stunning gallery templates with",
+      "highlight": "Arabian influence"
+    },
+    "features": {
+      "title": "Crafted for the",
+      "highlight": "discerning photographer",
+      "aestheticsTitle": "Rich Arabian Aesthetics",
+      "aestheticsDescription": "Incorporate beautiful Arabian design elements, patterns, and textures that complement your photography.",
+      "animationsTitle": "Immersive Animations",
+      "animationsDescription": "Captivate your audience with subtle motion effects that bring your gallery to life as visitors scroll.",
+      "responsiveTitle": "Responsive Design",
+      "responsiveDescription": "Your gallery will look stunning on any device, from desktop to mobile, ensuring a perfect viewing experience."
+    },
+    "testimonial": {
+      "quote": "Mashriq has transformed how I present my photography. The Arabian-inspired designs perfectly complement my travel portfolio from the Middle East.",
+      "author": "— Ahmed Al-Farsi, Professional Photographer"
+    },
+    "ctaSection": {
+      "title": "Begin your creative journey today",
+      "description": "Join thousands of photographers who have elevated their online presence with our Arabian-inspired gallery platform.",
+      "button": "Start your 30-day free trial",
+      "note": "No credit card required"
+    },
+    "footer": {
+      "terms": "Terms",
+      "privacy": "Privacy",
+      "support": "Support",
+      "contact": "Contact",
+      "copyright": "© {{year}} Mashriq. All rights reserved."
     }
+  }
 }
