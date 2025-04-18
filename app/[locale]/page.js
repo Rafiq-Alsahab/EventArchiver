@@ -16,9 +16,6 @@ export default function Home() {
           className="min-h-screen"
           src="/images/1.jpg"
           alt="Arabian texture background"
- 
-         
-
           />
       </div>
 

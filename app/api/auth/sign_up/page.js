@@ -1,3 +1,4 @@
+"use server"
 // app/api/auth/signup/route.ts
 import { NextResponse } from 'next/server';
 import { hashPassword } from '@/lib/auth';
