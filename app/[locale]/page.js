@@ -43,7 +43,7 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-24 md:py-32 relative bg-[url(/images/main_bg.png)] bg-cover">
+      <section className="container mx-auto px-4 py-24 md:py-32 relative">
         <ScrollReveal>
           <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-center leading-tight">
             {t("hero.titleLine1")} <br />
