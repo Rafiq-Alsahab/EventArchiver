@@ -3,6 +3,7 @@
 import { useState } from "react"
 import Link from "next/link"
 import { ArrowRight, Mail, Lock, Facebook } from "lucide-react"
+import { signIn } from "next-auth/react";
 
 import { ScrollReveal } from "@/components/scroll-reveal"
 
@@ -12,11 +13,20 @@ export default function SignInPage() {
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsLoading(true)
-    // Simulate API call
-    setTimeout(() => {
+   const res = await signIn("credentials", {
+       email,
+       password,
+       redirect: false,
+     });
+     console.log(res)
       setIsLoading(false)
-      window.location.href = "/dashboard"
-    }, 1500)
+
+     if (res.ok && !res.error) {
+       router.push("/");
+     } 
+    else{
+      console.log('shit')
+    }
   }
 
   return (
