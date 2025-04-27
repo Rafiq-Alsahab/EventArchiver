@@ -37,7 +37,7 @@ export default function Home() {
         </nav>
 
         <div className="flex items-center gap-4">
-          <Link href="/auth/sign-in" className="text-amber-200 hover:text-white transition-colors">{t("header.signIn")}</Link>
+          <Link href="/auth/login" className="text-amber-200 hover:text-white transition-colors">{t("header.signIn")}</Link>
           <button className="bg-amber-600 hover:bg-amber-500 text-white">{t("header.tryFree")}</button>
         </div>
       </header>
