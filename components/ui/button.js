@@ -19,4 +19,4 @@ const Button = React.forwardRef(({children , className, type, ...props }, ref) =
 })
 Button.displayName = "Button"
 
-export { button }
+export { Button }
