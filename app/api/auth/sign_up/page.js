@@ -3,7 +3,7 @@
 import { NextResponse } from 'next/server';
 import { hashPassword } from '@/lib/auth';
 import prisma from '@/lib/prisma';
-س
+
 export async function POST(request) {
   try {
     const { email, password } = await request.json();
