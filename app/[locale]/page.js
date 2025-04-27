@@ -31,7 +31,7 @@ export default function Home() {
 
         <nav className="hidden md:flex items-center gap-8 text-amber-200">
           <Link href="/" className="hover:text-white transition-colors">{t("header.home")}</Link>
-          <Link href="/galleries" className="hover:text-white transition-colors">{t("header.galleries")}</Link>
+          <Link href="/dashboard" className="hover:text-white transition-colors">{t("header.galleries")}</Link>
           <Link href="/features" className="hover:text-white transition-colors">{t("header.features")}</Link>
           <Link href="/pricing" className="hover:text-white transition-colors">{t("header.pricing")}</Link>
         </nav>
