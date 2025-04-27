@@ -30,14 +30,14 @@ export default function Home() {
         </div>
 
         <nav className="hidden md:flex items-center gap-8 text-amber-200">
-          <Link href="#" className="hover:text-white transition-colors">{t("header.home")}</Link>
-          <Link href="#" className="hover:text-white transition-colors">{t("header.galleries")}</Link>
-          <Link href="#" className="hover:text-white transition-colors">{t("header.features")}</Link>
-          <Link href="#" className="hover:text-white transition-colors">{t("header.pricing")}</Link>
+          <Link href="/" className="hover:text-white transition-colors">{t("header.home")}</Link>
+          <Link href="/galleries" className="hover:text-white transition-colors">{t("header.galleries")}</Link>
+          <Link href="/features" className="hover:text-white transition-colors">{t("header.features")}</Link>
+          <Link href="/pricing" className="hover:text-white transition-colors">{t("header.pricing")}</Link>
         </nav>
 
         <div className="flex items-center gap-4">
-          <Link href="#" className="text-amber-200 hover:text-white transition-colors">{t("header.signIn")}</Link>
+          <Link href="/auth/sign-in" className="text-amber-200 hover:text-white transition-colors">{t("header.signIn")}</Link>
           <button className="bg-amber-600 hover:bg-amber-500 text-white">{t("header.tryFree")}</button>
         </div>
       </header>
