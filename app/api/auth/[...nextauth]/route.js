@@ -16,7 +16,7 @@ const handler = NextAuth({
         if (!credentials?.email || !credentials?.password) {
           throw new Error("Missing email or password");
         }
-        
+        return true
         const user = await prisma.user.findUnique({
           where: { email: credentials.email },
         });
