@@ -1,48 +1,46 @@
-export function Badge({
-  className = '',
-  variant = 'default',
-  size = 'md',
-  rounded = 'full',
-  children,
-  ...props
-}) {
-  // Variant classes
-  const variantClasses = {
-    default: 'bg-gray-100 text-gray-800',
-    primary: 'bg-blue-100 text-blue-800',
-    secondary: 'bg-gray-800 text-gray-100',
-    destructive: 'bg-red-100 text-red-800',
-    success: 'bg-green-100 text-green-800',
-    outline: 'border border-gray-300 bg-transparent'
-  };
+"use client"
 
-  // Size classes
-  const sizeClasses = {
-    sm: 'px-2 py-0.5 text-xs',
-    md: 'px-2.5 py-1 text-sm',
-    lg: 'px-3 py-1.5 text-base'
-  };
+import * as React from "react"
+import * as TabsPrimitive from "@radix-ui/react-tabs"
 
-  // Rounded classes
-  const roundedClasses = {
-    full: 'rounded-full',
-    lg: 'rounded-lg',
-    md: 'rounded-md',
-    none: 'rounded-none'
-  };
+import { cn } from "@/lib/utils"
 
-  // Combine all classes
-  const classes = [
-    'inline-flex items-center font-medium',
-    variantClasses[variant] || variantClasses.default,
-    sizeClasses[size] || sizeClasses.md,
-    roundedClasses[rounded] || roundedClasses.full,
-    className
-  ].filter(Boolean).join(' ');
+const Tabs = TabsPrimitive.Root
 
-  return (
-    <span className={classes} {...props}>
-      {children}
-    </span>
-  );
-}
+const TabsList = React.forwardRef(({ className, ...props }, ref) => (
+  <TabsPrimitive.List
+    ref={ref}
+    className={cn(
+      "inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground",
+      className,
+    )}
+    {...props}
+  />
+))
+TabsList.displayName = TabsPrimitive.List.displayName
+
+const TabsTrigger = React.forwardRef(({ className, ...props }, ref) => (
+  <TabsPrimitive.Trigger
+    ref={ref}
+    className={cn(
+      "inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow-sm",
+      className,
+    )}
+    {...props}
+  />
+))
+TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
+
+const TabsContent = React.forwardRef(({ className, ...props }, ref) => (
+  <TabsPrimitive.Content
+    ref={ref}
+    className={cn(
+      "mt-2 ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2",
+      className,
+    )}
+    {...props}
+  />
+))
+TabsContent.displayName = TabsPrimitive.Content.displayName
+
+export { Tabs, TabsList, TabsTrigger, TabsContent }
