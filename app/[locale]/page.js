@@ -12,7 +12,7 @@ export default function Home() {
   const t = useTranslations("Home") 
 
   return (
-    <div className="bg-amber-950/90 text-amber-50 overflow-hidden">
+    <div className="bg-amber-900/50 text-amber-50 overflow-hidden">
       {/* Background texture */}
       <div className="fixed inset-0 -z-10 object-fill h-full">
       {/* <img className="mt-[18%]" src="/images/main_1bg.jpg" /> */}
@@ -21,7 +21,7 @@ export default function Home() {
       </div>
 
       {/* Header */}
-      <header className="container mx-auto py-6 px-4 flex items-center justify-between">
+      <header className="container mx-auto py-6 px-4 flex items-center justify-between bg-amber-950/50 rounded-b-xl">
         <div className="flex items-center gap-2">
           <div className="relative w-10 h-10">
             <Image src="/images/logo.png" alt="Mashriq Gallery Logo" fill className="object-contain rounded-2xl" />
@@ -31,7 +31,7 @@ export default function Home() {
 
         <nav className="hidden md:flex items-center gap-8 text-amber-200">
           <Link href="/" className="hover:text-white transition-colors">{t("header.home")}</Link>
-          <Link href="/dashboard" className="hover:text-white transition-colors">{t("header.galleries")}</Link>
+          <Link href="/templates" className="hover:text-white transition-colors">{t("header.galleries")}</Link>
           <Link href="/features" className="hover:text-white transition-colors">{t("header.features")}</Link>
           <Link href="/pricing" className="hover:text-white transition-colors">{t("header.pricing")}</Link>
         </nav>
@@ -43,9 +43,9 @@ export default function Home() {
       </header>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-24 md:py-32 relative">
+      <section className="container mx-auto px-4 py-24 md:py-32 relative  ">
         <ScrollReveal>
-          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-center leading-tight">
+          <h1 className="font-serif text-5xl md:text-7xl lg:text-8xl text-center leading-tight mt-20">
             {t("hero.titleLine1")} <br />
             <span className="text-amber-400">{t("hero.titleLine2")}</span>
           </h1>
@@ -72,7 +72,7 @@ export default function Home() {
       </section>
 
       {/* Gallery Showcase */}
-      <section className="py-24 md:py-32 relative">
+      <section className="py-24 md:py-32 relative bg-amber-950/50">
         <ScrollReveal>
           <h2 className="font-serif text-3xl md:text-4xl text-center mb-16">
             {t("showcase.title")} <span className="text-amber-400">{t("showcase.highlight")}</span>

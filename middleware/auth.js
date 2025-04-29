@@ -6,7 +6,7 @@ export async function authMiddleware(req) {
 
   const { pathname } = req.nextUrl;
   
-  const privatePaths = ['/dashboard', '/admin' , '/api/auth'];
+  const privatePaths = ['/dashboard', '/admin' , '/api/auth' , '/templates'];
   
   if (!token && privatePaths.some(path => pathname.startsWith(path))) {
     const loginUrl = new URL('/en/auth/login', req.url);

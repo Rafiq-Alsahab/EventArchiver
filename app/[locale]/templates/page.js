@@ -233,7 +233,7 @@ export default function TemplatesPage() {
                       className={
                         activeCategory === category.id
                           ? "bg-amber-500 hover:bg-amber-400 text-white"
-                          : "border-amber-300 text-amber-700 hover:bg-amber-100"
+                          : "border-amber-300 text-amber-700 hover:bg-amber-100 font-bold rounded p-4"
                       }
                       onClick={() => setActiveCategory(category.id)}
                     >

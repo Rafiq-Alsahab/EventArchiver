@@ -4,15 +4,20 @@ import { NextResponse } from 'next/server';
 import { hashPassword } from '@/lib/auth';
 import prisma from '@/lib/prisma';
 
-export async function POST(request) {
-  try {
-    const { email, password } = await request.json();
 
+export async function POST(request) {
+  console.log('in request')
+  try {
+    const {name, email, password } = await request.json();
+    console.log(name)
     const existingUser = await prisma.user.findUnique({
       where: { email },
     });
 
+   
+
     if (existingUser) {
+      console.log('user')
       return NextResponse.json(
         { error: 'User already exists' },
         { status: 400 }
@@ -24,9 +29,10 @@ export async function POST(request) {
 
     const newUser = await prisma.user.create({
         data:{
-          'name':credentials.name,
-          'email':credentials.email, 
+          'name':name,
+          'email':email, 
           'password': hashedPassword, 
+          'role':'OWNER',
         }
       })
 

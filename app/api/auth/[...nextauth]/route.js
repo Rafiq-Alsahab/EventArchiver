@@ -16,13 +16,16 @@ const handler = NextAuth({
         if (!credentials?.email || !credentials?.password) {
           throw new Error("Missing email or password");
         }
-        return true
+        
+        const s = await prisma.user.findMany();
+
         const user = await prisma.user.findUnique({
           where: { email: credentials.email },
         });
         if (!user) {
           throw new Error("No user found with this email");
         }
+     
         const isValid = await verifyPassword(credentials.password, user.password);
         if (!isValid) {
           throw new Error("Invalid password");

@@ -6,16 +6,18 @@ import { ArrowRight, Mail, Lock, Facebook } from "lucide-react"
 import { signIn } from "next-auth/react";
 
 import { ScrollReveal } from "@/components/scroll-reveal"
-
+import { useRouter  } from "next/navigation";
 export default function SignInPage() {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    setIsLoading(true)
+    setIsLoading(false)
+
    const res = await signIn("credentials", {
-       email,
-       password,
+       email:email.value,
+       password: password.value,
        redirect: false,
      });
      console.log(res)
@@ -24,9 +26,7 @@ export default function SignInPage() {
      if (res.ok && !res.error) {
        router.push("/");
      } 
-    else{
-      console.log('shit')
-    }
+   
   }
 
   return (

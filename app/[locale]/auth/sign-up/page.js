@@ -3,20 +3,46 @@
 import { useState } from "react"
 import Link from "next/link"
 import { ArrowRight, Mail, Lock, User, Facebook } from "lucide-react"
-
+import { useRouter } from "next/navigation"
 import { ScrollReveal } from "@/components/scroll-reveal"
 
 export default function SignUpPage() {
+  const router = useRouter();
   const [isLoading, setIsLoading] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     setIsLoading(true)
-    // Simulate API call
-    setTimeout(() => {
-      setIsLoading(false)
-      window.location.href = "/dashboard"
-    }, 1500)
+ 
+  
+    const data = {
+      name:usrname  .value, 
+      email: email.value,
+      password: password.value
+    };
+    console.log(data)
+  
+    try {
+      const response = await fetch('/api/auth/sign_up', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
+      });
+  
+      const result = await response.json();
+
+      if (result.success) {
+        router.push('/dashboard')
+    
+      } else {
+        alert(`Error: ${result.error}`);
+      }
+    } catch (error) {
+      console.log(error)
+      alert('Network error - please try again');
+    }
   }
 
   return (
@@ -56,7 +82,7 @@ export default function SignUpPage() {
                   <div className="relative">
                     <User className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-amber-500" />
                     <input
-                      id="name"
+                      id="usrname"
                       type="text"
                       placeholder="Your name"
                       required
